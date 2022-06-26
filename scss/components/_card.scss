@@ -1,0 +1,98 @@
+@use "../abstract/variables" as var;
+@use "../abstract/mixin" as mix;
+
+.card {
+  background-color: var.$white;
+  width: 100%;
+  max-width: 343px;
+  margin: 0 auto;
+  border-radius: 0.5rem;
+  overflow: hidden;
+
+  @include mix.breakpoint {
+    max-width: 590px;
+    display: grid;
+    grid-template-columns: 50% 50%;
+  }
+
+  &__img {
+    display: block;
+  }
+
+  &__content {
+    padding: 1.75rem 1.5rem;
+
+    @include mix.breakpoint {
+      padding: 2rem;
+    }
+  }
+
+  &__subtitle {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    margin-bottom: 1.125rem;
+  }
+
+  &__title {
+    font-family: var.$font-tl;
+    color: var.$btn-hv;
+    font-size: 1.75rem;
+    margin-bottom: 1.675rem;
+
+    @include mix.breakpoint {
+      margin-bottom: 1rem;
+    }
+  }
+
+  &__text {
+    font-size: 0.8rem;
+    line-height: 1.7;
+    margin-bottom: 3.5rem;
+
+    @include mix.breakpoint {
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  &__price {
+    display: flex;
+    align-items: center;
+
+    &--active {
+      color: var.$btn-bg;
+      font-size: 1.75rem;
+      font-family: var.$font-tl;
+      margin-right: 1rem;
+    }
+
+    &--inactive {
+      font-size: 0.8rem;
+      text-decoration: line-through;
+    }
+  }
+
+  &__btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: var.$btn-bg;
+    color: var.$white;
+    text-align: center;
+    font-weight: 700;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    margin-top: 1.5rem;
+    cursor: pointer;
+    transition: linear 0.5s;
+
+    &:hover {
+      background-color: var.$btn-hv;
+    }
+
+    img {
+      margin-right: 0.5rem;
+    }
+  }
+}
