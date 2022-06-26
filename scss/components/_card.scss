@@ -41,6 +41,10 @@
     margin-bottom: 1.675rem;
 
     @include mix.breakpoint {
+      font-size: 1.5rem;
+    }
+
+    @include mix.breakpoint {
       margin-bottom: 1rem;
     }
   }
